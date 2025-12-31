@@ -1,0 +1,149 @@
+/* Purple Weather App Styles */
+
+:root {
+  --primary: #6a0dad;
+  --primary-light: #9b5de5;
+  --bg: #000000;
+  --text: #ffffff;
+  --card-bg: #000000;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+#search-form {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+#city-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+#search-form button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#search-form button:hover {
+  background: var(--primary-light);
+}
+
+.card {
+  background: var(--card-bg);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.card.hidden {
+  display: none;
+}
+
+#location-name {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+#temperature {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.unit {
+  font-size: 1.5rem;
+  vertical-align: super;
+}
+
+#forecast-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.suggestions {
+  list-style: none;
+  margin-top: 0.5rem;
+  background: #000;
+  color: #ffffff;
+  border: 1px solid var(--primary);
+  border-radius: var(--radius);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.suggestions li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background: var(--primary-light);
+  color: #fff;
+}
+
+#forecast-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #333;
+  font-size: 0.95rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wetter App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🌤️ Die Wetter deines Mars</h1>
+        <form id="search-form">
+          <input
+            type="text"
+            id="city-input"
+            placeholder="Stadt suchen..."
+            required
+          />
+          <button type="submit">Suche</button>
+        </form>
+        <ul id="suggestions" class="suggestions hidden"></ul>
+      </header>
+
+      <section id="current-weather" class="card hidden">
+        <h2 id="location-name"></h2>
+        <p>
+          <span id="temperature"></span>
+          <span class="unit">°C</span>
+        </p>
+        <p id="weather-description"></p>
+      </section>
+
+      <section id="forecast" class="card hidden">
+        <h3>24-Stunden-Vorhersage</h3>
+        <ul id="forecast-list"></ul>
+      </section>
+
+      <section id="daily-forecast" class="card hidden">
+        <h3>7-Tage-Vorhersage</h3>
+        <ul id="daily-list"></ul>
+      </section>
+
+      <section id="detail-card" class="card hidden">
+        <h3 id="detail-title"></h3>
+        <p id="detail-info"></p>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
